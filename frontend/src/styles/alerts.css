@@ -1,0 +1,11 @@
+.alert-container > *{
+    display:inline-block;
+}
+
+.alert-button-container{
+    align-items: center;
+}
+
+.alert-message-container{
+    width: 80%;
+}

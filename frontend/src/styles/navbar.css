@@ -1,0 +1,50 @@
+.navbar-container{
+    display: flex;
+    width: 100%;
+    background: linear-gradient(146deg, rgba(108,101,240,1) 9%, rgba(81,81,240,1) 44%, rgba(9,9,121,1) 90%);
+    padding: 5px 15px 5px 15px;
+}
+
+.navbar-container > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navbar-title > p > a,.navbar-links > p > a{
+    color: white;
+}
+
+.navbar-title > p{
+    font-size: 2rem;  
+}
+
+.navbar-links > p{
+    font-size: 1.5rem;
+}
+
+.navbar-title{
+    width: 40%;
+}
+
+.navbar-links-container{
+    display: flex;
+    width: 55%;
+    justify-content: space-evenly;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-title > p > a{
+    text-decoration: none;
+}
+
+.navbar-links > p > a {
+    text-underline-offset: 2px;
+}
+
+
+

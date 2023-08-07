@@ -1,0 +1,61 @@
+.form-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.green-wave{
+    position: absolute;
+    bottom: 0;
+}
+
+.create-account-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container > input{
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.input-container{
+    padding: 9px;
+}
+
+.input-container:last-child{
+    display: flex;
+    justify-content: center;
+}
+
+.input-container:last-child > input{
+    background-color: #ec9219;
+    color: white;
+}
+
+.input-container:last-child > input:hover{
+   cursor:pointer;
+}
+
+.input-container:not(:last-child) > input{
+    border-color: #eab9f0;
+    border-style: solid;
+    background-color: #d2c4f8;
+}
+
+.input-container:not(:last-child) > input::placeholder{
+    color: whitesmoke;
+    opacity: 0.9;
+}
+
+.create-account-form-title{
+    display: flex;
+    justify-content: center;
+}
+
+.create-account-form-title > p{
+    color: black;
+    font-size: 1.5rem;
+}
+

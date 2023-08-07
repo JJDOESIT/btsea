@@ -1,0 +1,9 @@
+.create-wallet-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.create-wallet-button{
+    height: fit-content;
+}

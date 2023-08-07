@@ -1,0 +1,12 @@
+BitcoinLib installed, check further logs in bitcoinlib.log
+
+If you remove this file all settings will be reset again to the default settings. This might be usefull after an update or when problems occur.
+
+Installation parameters. Include this parameters when reporting bugs and issues:
+Bitcoinlib version: 0.6.11
+Installation date : 2023-08-05T00:20:12.713304
+Python            : 3.11.0
+Compiler          : Clang 13.0.0 (clang-1300.0.29.30)
+Build             : ('v3.11.0:deaf509e8f', 'Oct 24 2022 14:43:23')
+OS Version        : Darwin Kernel Version 22.5.0: Mon Apr 24 20:51:50 PDT 2023; root:xnu-8796.121.2~5/RELEASE_X86_64
+Platform          : macOS-13.4-x86_64-i386-64bit

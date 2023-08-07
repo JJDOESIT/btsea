@@ -1,0 +1,24 @@
+.transaction-table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+.transaction-table > tr{
+    text-align: center;
+}
+
+.transaction-table > tr > td{
+    word-break: break-all;
+}
+
+.transaction-container{
+    display: flex;
+    padding: 20px;
+}
+
+@media (max-width: 768px){
+    .transaction-table > tr > td{
+        font-size: 0.75rem;
+    }
+}
+

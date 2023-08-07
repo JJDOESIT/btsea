@@ -1,0 +1,22 @@
+.loading-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.loading-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+   
+}
+
+.loading-wrapper > svg{
+    width: 100px;
+    height: 100px;
+}
+
+.loading-wrapper > div{
+    display: flex;
+    justify-content: center;
+}
