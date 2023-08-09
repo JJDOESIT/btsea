@@ -1,10 +1,10 @@
 import axios from "axios";
 
 export default function postCreateWallet() {
-  const postCreateWalletURL =
-    "http://127.0.0.1:8000/framework/create-user-wallet/";
+  const BASE_URL = "http://jamesgwhit.pythonanywhere.com/";
+  const FULL_URL = BASE_URL + "framework/create-user-wallet/";
   axios
-    .post(postCreateWalletURL)
+    .post(FULL_URL)
     .then((response) => {
       console.log(response);
     })

@@ -5,6 +5,8 @@ from .models import CustomUser
 from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth.decorators import login_required
 
+BASE_URL='http://jamesgwhit.pythonanywhere.com/'
+
 def index(request,token=None,uid=None):
     return render(request,'index.html')
 
@@ -19,9 +21,9 @@ def verify(request,token,uid):
     if token_generator.check_token(user,token):
         user.is_active=True
         user.save()
-    return HttpResponseRedirect('http://127.0.0.1:8000/')
+    return HttpResponseRedirect(BASE_URL)
 
-@login_required(login_url='http://127.0.0.1:8000/login/')
+@login_required(login_url=BASE_URL+'login/')
 def auth_user(request):
     return render(request,'index.html')
 

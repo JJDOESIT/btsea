@@ -1,10 +1,10 @@
 import axios from "axios";
 
 export default function fetchUserWallet() {
-  const fetchUserWalletURL =
-    "http://127.0.0.1:8000/framework/fetch-user-wallet/";
+  const BASE_URL='http://jamesgwhit.pythonanywhere.com/'
+  const FULL_URL=BASE_URL+'framework/fetch-user-wallet/'
   return axios
-    .post(fetchUserWalletURL)
+    .post(FULL_URL)
     .then((response) => {
       console.log(response);
       return response.data
