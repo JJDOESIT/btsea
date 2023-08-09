@@ -3,10 +3,9 @@ import axios from "axios";
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";
 
-const BASE_URL = "http://jamesgwhit.pythonanywhere.com/";
-const FULL_URL = BASE_URL + "framework/create-user/";
-
 export default async function postCreateUser(data) {
+  const BASE_URL = "http://jamesgwhit.pythonanywhere.com/";
+  const FULL_URL = BASE_URL + "framework/create-user/";
   return await axios
     .post(FULL_URL, data)
     .then((response) => {

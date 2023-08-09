@@ -1,15 +1,16 @@
 import axios from "axios";
 
 export default function userLogout() {
-  const userLogoutURL = "http://127.0.0.1:8000/framework/user-logout/";
+  const BASE_URL = "http://jamesgwhit.pythonanywhere.com/";
+  const FULL_URL = BASE_URL + "framework/user-logout/";
   return axios
-    .post(userLogoutURL, { message: "success" })
+    .post(FULL_URL, { message: "success" })
     .then((response) => {
       console.log(response);
-      return response.data
+      return response.data;
     })
     .catch((error) => {
       console.log(error);
-      return error.response
+      return error.response;
     });
 }
