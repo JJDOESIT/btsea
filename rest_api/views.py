@@ -15,7 +15,7 @@ import os
 def verify_email(user):
     token = default_token_generator.make_token(user)
     uid = urlsafe_base64_encode(force_bytes(user.pk))
-    email_path = os.path.abspath("rest_api/templates/verify_email.html")
+    email_path = os.path.abspath("btsea/rest_api/templates/verify_email.html")
     message = render_to_string(email_path, {"uid": uid, "token": token})
     send_mail(
         "Verify Account", message, "securebtc@gmail.com", ["cuddletogs@gmail.com"]
