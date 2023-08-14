@@ -26,13 +26,15 @@ SECRET_KEY = "django-insecure-umj^hhz3_u6dow_*s6qh@e=6%sjcz1jzmf5(xtbmxu68e^mrwb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["jamesgwhit.pythonanywhere.com"]
+ALLOWED_HOSTS = ["jamesgwhit.pythonanywhere.com", "127.0.0.1"]
 
 AUTH_USER_MODEL = "backend_db_app.CustomUser"
 
 AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.AllowAllUsersModelBackend"]
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+PASSWORD_RESET_TIMEOUT=7200
 
 # Application definition
 

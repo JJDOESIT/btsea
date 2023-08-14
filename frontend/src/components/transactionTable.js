@@ -1,58 +1,94 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
+import _ from "lodash";
 import "../styles/transactions.css";
 
 export default function TransactionTable(transactions) {
   const [transactionList, setTransactionList] = useState(null);
+  const [paginatedPageList, setPaginatedPageList] = useState([]);
+  const [paginatedPageLink, setPaginatedPageLink] = useState([]);
+  const [pageSize, setPageSize] = useState(4);
+  const [pageCount, setPageCount] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [loaded, setLoaded] = useState(false);
+
   useEffect(() => {
     setTransactionList(transactions.transactions);
-    setLoaded(true);
+    setPageCount(transactions.transactions / pageSize);
+    if (transactions.transactions.length <= pageSize) {
+      setPaginatedPageList(transactions.transactions);
+      setPaginatedPageLink(
+        _.range(1, Math.ceil(transactions.transactions.length / pageSize) + 1)
+      );
+    } else {
+      setPaginatedPageList(
+        transactions.transactions.slice(0, pageSize),
+        setLoaded(true)
+      );
+      setPaginatedPageLink(
+        _.range(1, Math.ceil(transactions.transactions.length / pageSize) + 1)
+      );
+    }
   }, []);
+
+  useLayoutEffect(() => {
+    if (currentPage != null) {
+      const page_slice = _(transactionList)
+        .slice(pageSize * currentPage - pageSize)
+        .take(pageSize)
+        .value();
+      setPaginatedPageList(page_slice);
+    }
+  }, [currentPage]);
 
   if (loaded) {
     return (
       <div className="transaction-container">
         <table className="transaction-table">
           <tr>
-            <th>
-              <p>Address</p>
-            </th>
-            <th>
-              <p>Value</p>
-            </th>
-            <th>
-              <p>Status</p>
-            </th>
-            <th>
-              <p>Date</p>
-            </th>
-            <th>
-              <p>TXID</p>
-            </th>
+            <th>Address</th>
+            <th>Value</th>
+            <th>Date</th>
+            <th>TXID</th>
+            <th>Status</th>
           </tr>
-          {transactionList.map((transaction) => {
-            console.log(transaction);
+          {paginatedPageList.map((transaction) => {
             return (
               <tr>
-                <td>
-                  {transaction.address}
-                </td>
-                <td>
-                  {(transaction.value / (10**8))}
-                </td>
-                <td>
+                <td>{transaction.address}</td>
+                <td>{transaction.value / 10 ** 8}</td>
+                <td>{transaction.date}</td>
+                <td>{transaction.txid}</td>
+                <td
+                  style={{
+                    backgroundColor:
+                      transaction.status == "confirmed" ? "green" : "red",
+                    color: "white",
+                  }}
+                >
                   {transaction.status}
-                </td>
-                <td>
-                  {transaction.date}
-                </td>
-                <td>
-                {transaction.txid}
                 </td>
               </tr>
             );
           })}
         </table>
+        <div className="page-link-container">
+          {paginatedPageLink.map((page) => {
+            return (
+              <a
+                href="#"
+                onClick={() => {
+                  setCurrentPage(page);
+                }}
+                className={
+                  currentPage == page ? "page-link is-active" : "page-link"
+                }
+                style={{ padding: "0 10px 0 0" }}
+              >
+                {page}
+              </a>
+            );
+          })}
+        </div>
       </div>
     );
   } else {

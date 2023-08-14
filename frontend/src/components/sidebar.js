@@ -1,5 +1,4 @@
 import "../styles/sidebar.css";
-import classNames from "classnames/bind";
 import { useRef, useState } from "react";
 
 export default function Sidebar() {
@@ -22,12 +21,12 @@ export default function Sidebar() {
           <span></span>
         </div>
       </div>
-      <div className="side-bar-container">
-        <aside
-          className={
-            menuToggle ? "side-bar-wrapper" : "side-bar-wrapper is-active"
-          }
-        >
+      <div
+        className={
+          menuToggle ? "side-bar-container" : "side-bar-container is-active"
+        }
+      >
+        <aside className="side-bar-wrapper">
           <h3>Menu</h3>
           <nav className="menu">
             <a

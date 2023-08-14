@@ -1,52 +1,56 @@
-.form-container{
+.create-form-container{
     display: flex;
     width: 100%;
+    height: 70vh;
+    align-items: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
-.green-wave{
-    position: absolute;
-    bottom: 0;
+.register-container{
+    overflow-y: auto;
 }
 
 .create-account-form{
     display: flex;
     flex-direction: column;
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 15%;
 }
 
-.input-container > input{
-    border-radius: 3rem;
+.create-input-container:not(:last-child) > input{
+    border-radius: 10px;
     font-size: 1.2rem;
+    padding: 10px;
+    background-color: #e5ebed;
+    border: none;
+}
+
+.create-input-container{
     padding: 10px;
 }
 
-.input-container{
-    padding: 9px;
-}
-
-.input-container:last-child{
+.create-input-container:last-child{
     display: flex;
     justify-content: center;
 }
 
-.input-container:last-child > input{
+.create-input-container:last-child > input{
     background-color: #ec9219;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
     color: white;
+    font-size: 1.1rem;
+    transition: all 0.2s linear;
 }
 
-.input-container:last-child > input:hover{
+.create-input-container:last-child > input:hover{
    cursor:pointer;
-}
-
-.input-container:not(:last-child) > input{
-    border-color: #eab9f0;
-    border-style: solid;
-    background-color: #d2c4f8;
-}
-
-.input-container:not(:last-child) > input::placeholder{
-    color: whitesmoke;
-    opacity: 0.9;
+   transform: translateY(-5px);
 }
 
 .create-account-form-title{
@@ -55,7 +59,35 @@
 }
 
 .create-account-form-title > p{
-    color: black;
+    color: #0A51B6;
+    font-weight: bold;
     font-size: 1.5rem;
 }
+
+.create-input-container > label{
+    display: block;
+    padding-bottom: 5px;
+}
+
+.create-wave-container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 480px), (max-height: 450px){
+  .create-wave-container{
+    display: none;
+  }  
+
+  .create-form-container{
+    align-items: start;
+  }
+
+  .create-account-form{
+    margin-top: 10px;
+  }
+}
+
+
 

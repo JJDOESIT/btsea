@@ -13,14 +13,13 @@ export default function Alerts(props) {
       <div className="alert-message-container">
         <p style={{ color: props.fontColor }}>{props.message}</p>
       </div>
-      <div className="alert-button-container">
-        <input
-          type="button"
-          value="X"
-          onClick={() => {
-            props.toggleHidden();
-          }}
-        ></input>
+      <div
+        className="alert-button-container"
+        onClick={() => {
+          props.toggleHidden();
+        }}
+      >
+        <input type="button" value="X"></input>
       </div>
     </div>
   );

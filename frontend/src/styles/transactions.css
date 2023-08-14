@@ -1,20 +1,51 @@
 .transaction-table{
     table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 10px black;
 }
 
 .transaction-table > tr{
     text-align: center;
 }
 
-.transaction-table > tr > td{
+.transaction-table > tr > td, .transaction-table > tr > th{
     word-break: break-all;
+    padding: 15px;
 }
 
 .transaction-container{
     display: flex;
-    padding: 20px;
+    flex-direction: column;
+    padding: 0 20px 20px 20px;
 }
+
+.transaction-table > tr:nth-child(odd):not(:first-child){
+   background-color: rgb(189, 188, 240);
+}
+
+.transaction-table > tr:nth-child(even) > td{
+    background-color: rgb(242, 207, 250);
+}
+
+.transaction-table > tr > th{
+    background-color:lemonchiffon ;
+}
+
+.page-link{
+    text-decoration: none;
+    color: black;
+}
+
+.page-link.is-active{
+    color: rgb(0, 4, 255);
+    text-decoration: underline;
+}
+
+.page-link-container{
+padding-top: 15px;
+}
+
 
 @media (max-width: 768px){
     .transaction-table > tr > td{

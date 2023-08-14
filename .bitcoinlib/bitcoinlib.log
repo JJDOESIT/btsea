@@ -84,3 +84,88 @@
 2023/08/07 11:14:15 ERROR __init__(48) Wallet 'gibs@gmail.com' not found, please specify correct wallet ID or name.
 2023/08/07 11:14:29 ERROR __init__(48) Wallet 'gibs@gmail.com' not found, please specify correct wallet ID or name.
 2023/08/07 11:14:30 ERROR __init__(48) Wallet 'gibs@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/10 22:08:06 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'bitaps.testnet', 'litecoinblockexplorer.testnet2', 'blockbook.testnet2']
+2023/08/10 22:08:06 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitgo.testnet', 'blockstream.testnet', 'blocksmurfer.testnet', 'mempool.testnet']
+2023/08/10 22:08:06 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'blockstream.testnet', 'mempool.testnet', 'blockbook.testnet2']
+2023/08/10 22:08:06 ERROR __init__(40) Error when retrieving transactions from service provider
+2023/08/10 22:14:03 ERROR __init__(34) Network testnetr not found in network definitions
+2023/08/10 22:14:04 ERROR __init__(34) Network testnetr not found in network definitions
+2023/08/10 22:14:16 ERROR __init__(34) Network testnetr not found in network definitions
+2023/08/10 22:14:18 ERROR __init__(48) Wallet with name 'cuddletogs@gmail.com' already exists
+2023/08/10 22:14:19 ERROR __init__(34) Network testnetr not found in network definitions
+2023/08/10 22:14:23 ERROR __init__(34) Network testnetr not found in network definitions
+2023/08/10 22:14:25 ERROR __init__(34) Network testnetr not found in network definitions
+2023/08/10 22:14:39 ERROR __init__(34) Network testnetr not found in network definitions
+2023/08/10 23:51:29 WARNING _provider_execute(213) Aborting, max errors exceeded: ['litecoinblockexplorer.testnet2', 'bitaps.testnet', 'blocksmurfer.testnet', 'blockchair.testnet']
+2023/08/10 23:51:29 WARNING _provider_execute(213) Aborting, max errors exceeded: ['mempool.testnet', 'blockchair.testnet', 'bitaps.testnet', 'blocksmurfer.testnet']
+2023/08/10 23:51:29 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockbook.testnet2', 'bitgo.testnet', 'blockstream.testnet', 'litecoinblockexplorer.testnet2']
+2023/08/10 23:51:29 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'litecoinblockexplorer.testnet2', 'blockstream.testnet', 'bitgo.testnet']
+2023/08/10 23:51:29 WARNING _provider_execute(213) Aborting, max errors exceeded: ['mempool.testnet', 'blockbook.testnet2', 'bitaps.testnet', 'litecoinblockexplorer.testnet2']
+2023/08/10 23:51:29 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockbook.testnet2', 'blockchair.testnet', 'blockstream.testnet', 'bitaps.testnet']
+2023/08/10 23:51:29 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitgo.testnet', 'blockstream.testnet', 'mempool.testnet', 'blockchair.testnet']
+2023/08/10 23:51:30 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitgo.testnet', 'mempool.testnet', 'bitaps.testnet', 'blockstream.testnet']
+2023/08/10 23:51:30 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'litecoinblockexplorer.testnet2', 'bitaps.testnet', 'blockstream.testnet']
+2023/08/10 23:51:30 WARNING _provider_execute(213) Aborting, max errors exceeded: ['litecoinblockexplorer.testnet2', 'bitaps.testnet', 'bitgo.testnet', 'blockchair.testnet']
+2023/08/10 23:51:30 WARNING _provider_execute(213) Aborting, max errors exceeded: ['mempool.testnet', 'blocksmurfer.testnet', 'blockchair.testnet', 'bitaps.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'bitaps.testnet', 'blockbook.testnet2', 'blockstream.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'litecoinblockexplorer.testnet2', 'blockbook.testnet2', 'blockchair.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'bitaps.testnet', 'blockstream.testnet', 'blockbook.testnet2']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['litecoinblockexplorer.testnet2', 'bitgo.testnet', 'bitaps.testnet', 'blockstream.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['mempool.testnet', 'blockstream.testnet', 'litecoinblockexplorer.testnet2', 'blockbook.testnet2']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'litecoinblockexplorer.testnet2', 'blocksmurfer.testnet', 'mempool.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitaps.testnet', 'bitgo.testnet', 'mempool.testnet', 'blockstream.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'litecoinblockexplorer.testnet2', 'bitgo.testnet', 'mempool.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'blocksmurfer.testnet', 'blockbook.testnet2', 'blockchair.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitaps.testnet', 'mempool.testnet', 'blockbook.testnet2', 'blocksmurfer.testnet']
+2023/08/10 23:51:31 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'blockchair.testnet', 'blockbook.testnet2', 'bitaps.testnet']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockbook.testnet2', 'bitaps.testnet', 'blocksmurfer.testnet', 'bitgo.testnet']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['litecoinblockexplorer.testnet2', 'blockchair.testnet', 'blocksmurfer.testnet', 'bitaps.testnet']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'blockchair.testnet', 'bitaps.testnet', 'blockbook.testnet2']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'mempool.testnet', 'blockchair.testnet', 'blockstream.testnet']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockbook.testnet2', 'bitaps.testnet', 'bitgo.testnet', 'blockstream.testnet']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'bitaps.testnet', 'mempool.testnet', 'bitgo.testnet']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'litecoinblockexplorer.testnet2', 'blockchair.testnet', 'bitgo.testnet']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'mempool.testnet', 'blockstream.testnet', 'blockbook.testnet2']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['litecoinblockexplorer.testnet2', 'blockstream.testnet', 'bitaps.testnet', 'blockbook.testnet2']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockbook.testnet2', 'blocksmurfer.testnet', 'blockchair.testnet', 'bitgo.testnet']
+2023/08/10 23:51:45 WARNING _provider_execute(213) Aborting, max errors exceeded: ['mempool.testnet', 'blocksmurfer.testnet', 'bitgo.testnet', 'blockstream.testnet']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'blockbook.testnet2', 'litecoinblockexplorer.testnet2', 'blocksmurfer.testnet']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'blocksmurfer.testnet', 'blockstream.testnet', 'litecoinblockexplorer.testnet2']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'blockchair.testnet', 'mempool.testnet', 'bitaps.testnet']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['mempool.testnet', 'bitgo.testnet', 'blockchair.testnet', 'blockstream.testnet']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'bitaps.testnet', 'bitgo.testnet', 'litecoinblockexplorer.testnet2']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'blockchair.testnet', 'bitaps.testnet', 'bitgo.testnet']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['mempool.testnet', 'blocksmurfer.testnet', 'blockchair.testnet', 'blockstream.testnet']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitaps.testnet', 'blockbook.testnet2', 'bitgo.testnet', 'blockstream.testnet']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'blocksmurfer.testnet', 'mempool.testnet', 'blockstream.testnet']
+2023/08/10 23:53:49 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitgo.testnet', 'blockchair.testnet', 'blockstream.testnet', 'blocksmurfer.testnet']
+2023/08/10 23:53:50 WARNING _provider_execute(213) Aborting, max errors exceeded: ['litecoinblockexplorer.testnet2', 'mempool.testnet', 'blockbook.testnet2', 'bitgo.testnet']
+2023/08/10 23:53:50 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitaps.testnet', 'litecoinblockexplorer.testnet2', 'mempool.testnet', 'blockchair.testnet']
+2023/08/10 23:53:50 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitaps.testnet', 'blockchair.testnet', 'mempool.testnet', 'blockstream.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'litecoinblockexplorer.testnet2', 'bitgo.testnet', 'blocksmurfer.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'mempool.testnet', 'bitgo.testnet', 'litecoinblockexplorer.testnet2']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'blockchair.testnet', 'bitgo.testnet', 'litecoinblockexplorer.testnet2']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'blocksmurfer.testnet', 'blockbook.testnet2', 'bitgo.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'blockbook.testnet2', 'bitgo.testnet', 'bitaps.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockbook.testnet2', 'bitaps.testnet', 'mempool.testnet', 'blockchair.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['mempool.testnet', 'bitaps.testnet', 'blocksmurfer.testnet', 'blockchair.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'blockchair.testnet', 'bitgo.testnet', 'blockbook.testnet2']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockchair.testnet', 'bitaps.testnet', 'mempool.testnet', 'blockstream.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitgo.testnet', 'blocksmurfer.testnet', 'blockchair.testnet', 'mempool.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blockstream.testnet', 'blockbook.testnet2', 'bitgo.testnet', 'blocksmurfer.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['blocksmurfer.testnet', 'blockbook.testnet2', 'bitgo.testnet', 'mempool.testnet']
+2023/08/10 23:53:53 WARNING _provider_execute(213) Aborting, max errors exceeded: ['bitaps.testnet', 'blockchair.testnet', 'bitgo.testnet', 'mempool.testnet']
+2023/08/13 03:59:45 ERROR __init__(48) Wallet 'hehe@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 03:59:53 ERROR __init__(48) Wallet 'hehe@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 04:08:06 ERROR __init__(48) Wallet 'jj@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 04:35:58 ERROR __init__(48) Wallet 'james@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 04:44:37 ERROR __init__(48) Wallet 'james2@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 04:53:26 ERROR __init__(48) Wallet 'jameshehe@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 04:56:13 ERROR __init__(48) Wallet 'jameshehe@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 05:00:14 ERROR __init__(48) Wallet 'jameshehe@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 06:54:11 ERROR __init__(48) Wallet 'james@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 23:34:50 ERROR __init__(48) Wallet 'jjdoesit@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 23:35:21 ERROR __init__(48) Wallet with name 'jjdoesit@gmail.com' already exists
+2023/08/13 23:35:33 ERROR __init__(48) Wallet with name 'jjdoesit@gmail.com' already exists
+2023/08/13 23:41:45 ERROR __init__(48) Wallet 'hehe@gmail.com' not found, please specify correct wallet ID or name.
+2023/08/13 23:46:22 ERROR __init__(48) Wallet 'io@gmail.com' not found, please specify correct wallet ID or name.

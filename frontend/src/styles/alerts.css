@@ -1,11 +1,34 @@
 .alert-container > *{
-    display:inline-block;
+    display:inline-flex;
 }
 
 .alert-button-container{
-    align-items: center;
+    height: 100%;
+    width: 20%;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+
+.alert-button-container > input{
+    background: none;
+    border: none;
+}
+
+.alert-button-container:hover{
+    background-color: lightgray;
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 .alert-message-container{
     width: 80%;
+}
+
+.alert-message-container > p{
+    padding-left: 10px;
+}
+
+.alert-container{
+    border-radius: 0.5rem;
+    height: 50px;
 }

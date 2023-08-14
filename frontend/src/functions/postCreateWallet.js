@@ -1,14 +1,16 @@
 import axios from "axios";
 
 export default function postCreateWallet() {
-  const BASE_URL = "http://jamesgwhit.pythonanywhere.com/";
-  const FULL_URL = BASE_URL + "framework/create-user-wallet/";
-  axios
-    .post(FULL_URL)
+  const TEST_URL = "http://127.0.0.1:8000/framework/create-user-wallet/";
+  const PRODUCTION_URL =
+    "http://jamesgwhit.pythonanywhere.com/framework/create-user-wallet/";
+  return axios
+    .post(TEST_URL)
     .then((response) => {
-      console.log(response);
+      return response.data;
     })
     .catch((error) => {
       console.log(error);
+      return error.response;
     });
 }

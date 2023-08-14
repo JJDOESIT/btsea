@@ -5,6 +5,7 @@ export default function Wavify() {
     <Wave
       fill="url(#gradient)"
       className="svg-wave"
+      style={{ position: "absolute", bottom: 0, height: '20vh' }}
       options={{
         height: 20,
         amplitude: 50,

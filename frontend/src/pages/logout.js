@@ -8,6 +8,7 @@ export default function Logout() {
             if (status.status==200){
                 window.localStorage.removeItem('activeUser')
                 navigate('/login/')
+                navigate(0)
             }
         })
     }

@@ -3,8 +3,8 @@ import CSRFToken from "../components/CSRFToken";
 import postCreateUser from "../functions/postCreateUser";
 import Alerts from "../components/alerts";
 import "../styles/register.css";
-import "../styles/SVGWave.css";
 import Wavify from "../components/svgWave";
+import modifyDocumentBody from "../functions/modifyDocumentBody";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -16,6 +16,13 @@ export default function Register() {
     backgroundColor: "",
     fontColor: "",
   });
+
+  useEffect(() => {
+    modifyDocumentBody("body", ".navbar-container", ".register-container");
+    window.addEventListener("resize", () => {
+      modifyDocumentBody("body", ".navbar-container", ".register-container");
+    });
+  }, []);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -48,29 +55,29 @@ export default function Register() {
   }
 
   return (
-    <div>
-      <div className="form-container">
+    <div className="register-container">
+      <div className="create-form-container">
         <form onSubmit={handleSubmit} className="create-account-form">
           <CSRFToken></CSRFToken>
           <div className="create-account-form-title">
-            <p>Register Now</p>
+            <p>Register</p>
           </div>
-          <div className="input-container">
+          <div className="create-input-container">
+            <label>Enter an email</label>
             <input
               type="email"
               id="email"
-              placeholder="email"
               onChange={() => setEmail(document.querySelector("#email").value)}
               minLength="3"
               maxLength="25"
               required
             ></input>
           </div>
-          <div className="input-container">
+          <div className="create-input-container">
+            <label>Enter a password</label>
             <input
               type="password"
               id="password"
-              placeholder="password"
               onChange={() =>
                 setPassword(document.querySelector("#password").value)
               }
@@ -91,12 +98,14 @@ export default function Register() {
               })
             }
           ></Alerts>
-          <div className="input-container">
+          <div className="create-input-container">
             <input type="submit" value="Create Account"></input>
           </div>
         </form>
       </div>
-      <Wavify></Wavify>
+      <div className="create-wave-container">
+        <Wavify></Wavify>
+      </div>
     </div>
   );
 }

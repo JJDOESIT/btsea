@@ -1,10 +1,10 @@
 import axios from "axios";
 
 export default async function postLoginUser(data) {
-  const BASE_URL = "http://jamesgwhit.pythonanywhere.com/";
-  const FULL_URL = BASE_URL + "framework/login-user/";
+  const TEST_URL = "http://127.0.0.1:8000/framework/login-user/";
+  const PRODUCTION_URL = "http://jamesgwhit.pythonanywhere.com/framework/login-user/";
   return await axios
-    .post(FULL_URL, data)
+    .post(TEST_URL, data)
     .then((response) => {
       console.log(response);
       return response.data;

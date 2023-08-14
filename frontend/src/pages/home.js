@@ -4,6 +4,8 @@ import DashboardTitle from "../components/dashboardTitle";
 import LoadingSVG from "../components/loadingSVG";
 import TransactionTable from "../components/transactionTable";
 import CreateWallet from "./createWallet";
+import refreshUserWallet from "../functions/refreshUserWallet";
+import reverseArray from "../functions/reverseArray";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -12,8 +14,29 @@ export default function Home() {
   const [walletCreated, setWalletCreated] = useState(false);
 
   useEffect(() => {
-    fetchUserWallet().then((response) => {
+    const timeout = setTimeout(() => {
+      fetchUserWallet().then((response) => {
+        if (response.status == 200) {
+          response.transactions = reverseArray(response.transactions);
+          setWallet(response);
+          setWalletCreated(true);
+          setLoading(false);
+          clearTimeout(timeout);
+        } else if (response.status == 404) {
+          console.log("Wallet not found");
+          setWalletCreated(false);
+          setLoading(false);
+          clearTimeout(timeout);
+        }
+      });
+    }, 1000);
+  }, []);
+
+  function handleRefresh() {
+    setLoading(true);
+    refreshUserWallet().then((response) => {
       if (response.status == 200) {
+        response.transactions = reverseArray(response.transactions);
         setWallet(response);
         setWalletCreated(true);
         setLoading(false);
@@ -23,21 +46,32 @@ export default function Home() {
         setLoading(false);
       }
     });
-  }, []);
+  }
 
   if (!loading && walletCreated) {
     return (
-      <div>
+      <div
+        className="home-container"
+        style={{ height: "100%", overflow: "auto" , width: '100%'}}
+      >
         <DashboardTitle
           walletName={wallet.wallet_name}
           balance={wallet.balance}
         ></DashboardTitle>
+        <div className="transaction-refresh-container">
+          <div>
+            <p>Transactions</p>
+          </div>
+          <div>
+            <input type="button" value="↻" onClick={handleRefresh}></input>
+          </div>
+        </div>
         {wallet.transactions.length > 0 ? (
           <TransactionTable
             transactions={wallet.transactions}
           ></TransactionTable>
         ) : (
-          <div>No transactions</div>
+          <div style={{display: 'flex', justifyContent: 'center'}}>No transactions</div>
         )}
       </div>
     );
