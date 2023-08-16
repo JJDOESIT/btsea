@@ -46,12 +46,34 @@ export default function Send() {
             return {
               ...prev,
               hidden: false,
+              borderColor: "1px solid #f5c6cb",
+              backgroundColor: "#f8d7da",
+              fontColor: "#721c24",
               message: "Invalid Input",
             };
           });
         } else if (response.status == 401) {
           setAlertData((prev) => {
-            return { ...prev, hidden: false, message: "Invalid Amount" };
+            return {
+              ...prev,
+              hidden: false,
+              borderColor: "1px solid #f5c6cb",
+              backgroundColor: "#f8d7da",
+              fontColor: "#721c24",
+              message: "Invalid Amount",
+            };
+          });
+        }
+        else if (response.status==404){
+          setAlertData((prev) => {
+            return {
+              ...prev,
+              hidden: false,
+              borderColor: "1px solid #f5c6cb",
+              backgroundColor: "#f8d7da",
+              fontColor: "#721c24",
+              message: "No Wallet Found",
+            };
           });
         }
       }
