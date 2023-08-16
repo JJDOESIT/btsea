@@ -23,7 +23,7 @@
 .crypto-card-front{
     position: absolute;
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
     transition: all 0.5s;
     background-color: #fff;
     border-radius: 2rem;
@@ -56,7 +56,7 @@
     position: absolute;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
     transition: all 0.5s;
     height: 175px;
     width: 100px;
