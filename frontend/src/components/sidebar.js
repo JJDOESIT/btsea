@@ -45,7 +45,7 @@ export default function Sidebar() {
               Home
             </a>
             <a
-              href="http://127.0.0.1:8000/dashboard/send/"
+              href="http://jamesgwhit.pythonanywhere.com/dashboard/send/"
               className={
                 window.location.href.includes("send")
                   ? "menu-item is-active"
@@ -58,7 +58,7 @@ export default function Sidebar() {
               Send
             </a>
             <a
-              href="http://127.0.0.1:8000/dashboard/receive/"
+              href="http://jamesgwhit.pythonanywhere.com/dashboard/receive/"
               className={
                 window.location.href.includes("receive")
                   ? "menu-item is-active"
