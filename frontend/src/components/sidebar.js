@@ -7,7 +7,7 @@ export default function Sidebar() {
   const selectedLink = useRef("home");
 
   const sidebarLinkArray = ["home", "send", "receive"];
-  const BASE_URL = "http://jamesgwhit.pythonanywhere.com/";
+  
   return (
     <>
       <div
@@ -45,7 +45,7 @@ export default function Sidebar() {
               Home
             </a>
             <a
-              href={BASE_URL + "dashboard/send/"}
+              href="http://jamesgwhit.pythonanywhere.com/dashboard/send/"
               className={
                 window.location.href.includes("send")
                   ? "menu-item is-active"
@@ -58,7 +58,7 @@ export default function Sidebar() {
               Send
             </a>
             <a
-              href={BASE_URL + "dashboard/receive/"}
+              href="http://jamesgwhit.pythonanywhere.com/dashboard/receive/"
               className={
                 window.location.href.includes("receive")
                   ? "menu-item is-active"
