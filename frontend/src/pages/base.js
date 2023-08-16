@@ -35,7 +35,7 @@ export default function Base() {
         }
       }
     }
-  }, [loaded]);
+  }, [paginatedData]);
 
   //Starting from front, flips card
   function handleCardFlipFront(card) {
