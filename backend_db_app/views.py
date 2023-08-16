@@ -19,11 +19,10 @@ def verify(request, token, uid):
     try:
         pk = urlsafe_base64_decode(uid)
     except:
-        raise Exception("PK Error")
+        return HttpResponseRedirect(BASE_URL)
     user = CustomUser.objects.get(pk=pk)
     token_generator = default_token_generator
     if token_generator.check_token(user, token):
-        print("success")
         user.is_active = 1
         user.save()
     return HttpResponseRedirect(BASE_URL)
