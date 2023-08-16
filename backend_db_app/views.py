@@ -46,4 +46,4 @@ def auth_user(request):
 
 # Handles 404 error
 def handle404(request, exception=None):
-    return HttpResponseRedirect(BASE_URL + "not-found/")
+    raise Exception()
