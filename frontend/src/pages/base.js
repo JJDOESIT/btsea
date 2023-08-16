@@ -9,6 +9,7 @@ export default function Base() {
   const [paginatedData, setPaginatedData] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
+  //Get request to fetch trending crypto data
   useEffect(() => {
     document.querySelector("#root").style.overflow = "auto";
     axios
@@ -20,6 +21,23 @@ export default function Base() {
       });
   }, []);
 
+  //Chrome Only (fixes card style)
+  useEffect(() => {
+    if (loaded) {
+      if (window.chrome && !window.opr) {
+        const frontList = document.querySelectorAll(".crypto-card-front");
+        const backList = document.querySelectorAll(".crypto-card-back");
+        for (let i = 0; i < frontList.length; i++) {
+          frontList[i].style.transformStyle = "preserve-3d";
+        }
+        for (let j = 0; j < backList.length; j++) {
+          backList[j].style.transformStyle = "preserve-3d";
+        }
+      }
+    }
+  }, [loaded]);
+
+  //Starting from front, flips card
   function handleCardFlipFront(card) {
     const cardFront = document.querySelector("#" + card + "-front");
     cardFront.style.transform = "rotateY(180deg)";
@@ -27,6 +45,7 @@ export default function Base() {
     cardBack.style.transform = "none";
   }
 
+  //Starting from back, flips card
   function handleCardFlipBack(card) {
     const cardFront = document.querySelector("#" + card + "-front");
     cardFront.style.transform = "none";
@@ -34,6 +53,7 @@ export default function Base() {
     cardBack.style.transform = "rotateY(180deg)";
   }
 
+  //Pagnation function
   function handleShowMore() {
     setPaginatedData((prev) => {
       if (prev.length + 20 >= cryptoData.length) {
