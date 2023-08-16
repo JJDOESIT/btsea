@@ -6,9 +6,8 @@ export default function postCheckUserActive(email) {
     "http://jamesgwhit.pythonanywhere.com/framework/check-user-active/";
 
   return axios
-    .post(TEST_URL, { email: email })
+    .post(PRODUCTION_URL, { email: email })
     .then((response) => {
-      console.log(response);
       return response.data;
     })
     .catch((error) => {

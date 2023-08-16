@@ -50,6 +50,7 @@ padding-top: 15px;
 @media (max-width: 768px){
     .transaction-table > tr > td{
         font-size: 0.75rem;
+        padding: 5px;
     }
 }
 

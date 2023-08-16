@@ -4,6 +4,26 @@
     justify-content: center;
 }
 
+.create-wallet-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-wallet-wrapper > div > p{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 .create-wallet-button{
     height: fit-content;
+    background: green;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 2rem;
+}
+
+.create-wallet-button:hover{
+    cursor: pointer;
+    opacity: 0.5;
 }

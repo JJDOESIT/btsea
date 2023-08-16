@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import postReceiveTransaction from "../functions/postReceiveTransaction";
 import Popup from "../components/popup";
 import "../styles/receive.css";
+import CryptButton from "../components/encryptButton";
 
 export default function Receive() {
   const [address, setAddress] = useState(null);
@@ -9,7 +10,6 @@ export default function Receive() {
   const [popupActive, setPopupActive] = useState(false);
 
   function generateAddress() {
-    console.log("clicked");
     postReceiveTransaction()
       .then((response) => {
         if (response.status == 200) {
@@ -43,23 +43,31 @@ export default function Receive() {
           flexDirection: "row",
           flexWrap: "wrap",
           justifyContent: "space-evenly",
+          paddingBottom: "10px",
         }}
       >
-        <div style={{background: 'orange', borderRadius: '10px'}} className="address-button-container">
-          <input
-            type="button"
-            value="Generate address"
-            onClick={() => {
-              generateAddress();
-            }}
-            style={{background: 'none',border: 'none', color: 'white', fontSize: '1.1rem'}}
-          ></input>
+        <div>
+          <CryptButton
+            targetText="Generate Address"
+            targetFunction={generateAddress}
+          ></CryptButton>
         </div>
-        <a href="#" onClick={() => showPopup()} style={{paddingLeft: '20px'}}>
+        <a
+          href="#"
+          onClick={() => showPopup()}
+          style={{ paddingLeft: "20px" , alignSelf: 'center'}}
+          className="receive-popup-link"
+        >
           What is a bitcoin address?
         </a>
       </div>
-      <hr style={{height: '10px', width: '80%', background: 'black'}}></hr>
+      <hr
+        style={{
+          height: "10px",
+          width: "80%",
+          background: "black",
+        }}
+      ></hr>
       <Popup
         title="Bitcoin Address?"
         text="A Bitcoin address is a unique identifier used in the Bitcoin network for sending and receiving Bitcoins. It consists of a combination of letters and numbers, serving as a digital wallet for your transactions. It provides a secure and private way to interact with the Bitcoin network."

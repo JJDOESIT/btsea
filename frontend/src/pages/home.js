@@ -9,7 +9,6 @@ import reverseArray from "../functions/reverseArray";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
-  const [message, setMessage] = useState("Loading");
   const [wallet, setWallet] = useState(null);
   const [walletCreated, setWalletCreated] = useState(false);
 

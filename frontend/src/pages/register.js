@@ -16,7 +16,9 @@ export default function Register() {
     backgroundColor: "",
     fontColor: "",
   });
+  const [passwordMessage, setPasswordMessage] = useState("Enter a password");
 
+  //Modifies .register-container to the correct height on re-size
   useEffect(() => {
     modifyDocumentBody("body", ".navbar-container", ".register-container");
     window.addEventListener("resize", () => {
@@ -24,10 +26,30 @@ export default function Register() {
     });
   }, []);
 
+  //Checks if password meets the minimum requirements of 8 chars, 1 letter, 1 number
+  useEffect(() => {
+    if (password != null && password != "") {
+      const passwordLabel = document.querySelector("#password-label");
+      if (password.length < 8) {
+        setPasswordMessage("Must be 8 characters");
+        passwordLabel.style.color = "red";
+      } else if (!/\d/.test(password)) {
+        setPasswordMessage("Must contain one number");
+        passwordLabel.style.color = "red";
+      } else if (!/[a-zA-Z]/g.test(password)) {
+        setPasswordMessage("Must contain one letter");
+        passwordLabel.style.color = "red";
+      } else {
+        setPasswordMessage("Looks good!");
+        passwordLabel.style.color = "green";
+      }
+    }
+  }, [password]);
+
+  //Sends a post request to create an account
   function handleSubmit(event) {
     event.preventDefault();
     postCreateUser({ email: email, password: password }).then((status) => {
-      console.log(status);
       if (status == 200) {
         setAlertData((prev) => {
           return {
@@ -74,10 +96,11 @@ export default function Register() {
             ></input>
           </div>
           <div className="create-input-container">
-            <label>Enter a password</label>
+            <label id="password-label">{passwordMessage}</label>
             <input
               type="password"
               id="password"
+              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
               onChange={() =>
                 setPassword(document.querySelector("#password").value)
               }

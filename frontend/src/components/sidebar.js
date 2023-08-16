@@ -1,11 +1,12 @@
 import "../styles/sidebar.css";
 import { useRef, useState } from "react";
+import HandleUserLogout from "../functions/handleLogout";
 
 export default function Sidebar() {
   const [menuToggle, setMenuToggle] = useState(true);
   const selectedLink = useRef("home");
 
-  const sidebarLinkArray = ["home", "send", "receive", "logout"];
+  const sidebarLinkArray = ["home", "send", "receive"];
 
   return (
     <>
@@ -33,8 +34,7 @@ export default function Sidebar() {
               href="/dashboard/"
               className={
                 window.location.href.includes("send") ||
-                window.location.href.includes("receive") ||
-                window.location.href.includes("logout")
+                window.location.href.includes("receive")
                   ? "menu-item"
                   : "menu-item is-active"
               }
@@ -45,7 +45,7 @@ export default function Sidebar() {
               Home
             </a>
             <a
-              href="send/"
+              href="http://127.0.0.1:8000/dashboard/send/"
               className={
                 window.location.href.includes("send")
                   ? "menu-item is-active"
@@ -58,7 +58,7 @@ export default function Sidebar() {
               Send
             </a>
             <a
-              href="receive/"
+              href="http://127.0.0.1:8000/dashboard/receive/"
               className={
                 window.location.href.includes("receive")
                   ? "menu-item is-active"
@@ -70,19 +70,7 @@ export default function Sidebar() {
             >
               Receive
             </a>
-            <a
-              href="http://127.0.0.1:8000/dashboard/logout/"
-              className={
-                window.location.href.includes("logout")
-                  ? "menu-item is-active"
-                  : "menu-item"
-              }
-              onClick={() => {
-                selectedLink.current = sidebarLinkArray[3];
-              }}
-            >
-              Logout
-            </a>
+            <HandleUserLogout></HandleUserLogout>
           </nav>
         </aside>
       </div>

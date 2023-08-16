@@ -48,7 +48,7 @@ export default function Base() {
     return (
       <>
         <div className="base-title">
-          <p>Trending Cryptocurrencies</p>
+          <p>Cryptocurrencies</p>
         </div>
         <div className="crypto-card-grid-container">
           {paginatedData.map((crypto) => {

@@ -1,8 +1,3 @@
-.address-button-container > input:hover{
-    cursor: pointer;
-    opacity: 0.5;
-}
-
 .generated-address-container{
     display: flex;
     flex-direction: column;
@@ -16,4 +11,11 @@
     border-radius: 3rem;
 }
 
+.receive-popup-link{
+    text-decoration: underline;
+    color: rgb(42, 0, 255);
+}
 
+.receive-popup-link:hover{
+    cursor: pointer;
+}

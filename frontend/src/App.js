@@ -7,6 +7,8 @@ import Dashboard from "./pages/dashboard";
 import VerifyEmail from "./pages/verifyEmail";
 import React from "react";
 import Base from "./pages/base";
+import Analytics from "./pages/analytics";
+import NotFound from "./pages/notFound";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           path="verify-email/"
           element={<VerifyEmail></VerifyEmail>}
         ></Route>
+        <Route path="analytics/" element={<Analytics></Analytics>}></Route>
+        <Route path="not-found/" element={<NotFound></NotFound>}></Route>
       </Routes>
     </>
   );

@@ -60,3 +60,9 @@
 .popup-title > p{
     font-weight: bold;
 }
+
+@media (max-height: 570px) and (max-width: 350px){
+    .popup-container{
+        top: 0;
+    }
+}

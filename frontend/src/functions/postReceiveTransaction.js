@@ -5,7 +5,7 @@ export default function postReceiveTransaction() {
   const PRODUCTION_URL =
     "http://jamesgwhit.pythonanywhere.com/framework/receive-transaction/";
   return axios
-    .post(TEST_URL)
+    .post(PRODUCTION_URL)
     .then((response) => {
       return response
     })

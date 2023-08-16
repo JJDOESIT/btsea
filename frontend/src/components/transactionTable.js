@@ -19,13 +19,12 @@ export default function TransactionTable(transactions) {
       setPaginatedPageLink(
         _.range(1, Math.ceil(transactions.transactions.length / pageSize) + 1)
       );
+      setLoaded(true);
     } else {
-      setPaginatedPageList(
-        transactions.transactions.slice(0, pageSize),
-        setLoaded(true)
-      );
+      setPaginatedPageList(transactions.transactions.slice(0, pageSize));
       setPaginatedPageLink(
-        _.range(1, Math.ceil(transactions.transactions.length / pageSize) + 1)
+        _.range(1, Math.ceil(transactions.transactions.length / pageSize) + 1),
+        setLoaded(true)
       );
     }
   }, []);
@@ -49,6 +48,7 @@ export default function TransactionTable(transactions) {
             <th>Value</th>
             <th>Date</th>
             <th>TXID</th>
+            <th>Type</th>
             <th>Status</th>
           </tr>
           {paginatedPageList.map((transaction) => {
@@ -58,6 +58,7 @@ export default function TransactionTable(transactions) {
                 <td>{transaction.value / 10 ** 8}</td>
                 <td>{transaction.date}</td>
                 <td>{transaction.txid}</td>
+                <td>{transaction.is_output ? "Sent" : "Received"}</td>
                 <td
                   style={{
                     backgroundColor:

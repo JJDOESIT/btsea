@@ -20,3 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('backend_db_app.urls')),
 ]
+
+handler404='backend_db_app.views.handle404'

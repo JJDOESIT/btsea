@@ -5,7 +5,7 @@ export default function postCreateWallet() {
   const PRODUCTION_URL =
     "http://jamesgwhit.pythonanywhere.com/framework/create-user-wallet/";
   return axios
-    .post(TEST_URL)
+    .post(PRODUCTION_URL)
     .then((response) => {
       return response.data;
     })

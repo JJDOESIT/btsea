@@ -9,5 +9,7 @@ urlpatterns = [
     path("create-user-wallet/", views.create_user_wallet.as_view()),
     path("refresh-user-wallet/", views.refresh_user_wallet.as_view()),
     path("receive-transaction/", views.receive_transaction.as_view()),
-    path('check-user-active/',views.check_user_active.as_view()),
+    path("check-user-active/", views.check_user_active.as_view()),
+    path("send-transaction/", views.send_transaction.as_view()),
+    path("send-new-email/", views.send_new_email.as_view()),
 ]
