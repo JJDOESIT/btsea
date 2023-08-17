@@ -21,8 +21,8 @@ export default function Login() {
   const navigate = useNavigate();
   useEffect(() => {
     if (
-      window.location.href.includes("?next=/dashboard/") ||
-      window.location.href.includes("?next=/verify-email/")
+      window.location.href.includes("?next=") ||
+      window.location.href.includes("?next=")
     ) {
       setAlertData({
         hidden: false,
