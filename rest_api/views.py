@@ -208,7 +208,7 @@ class send_transaction(APIView):
                 amount = int(request.data["amount"]) * (10**8)
             except:
                 try:
-                    amount = float(request.data["amount"]) * (10**8)
+                    amount = round(float(request.data["amount"]) * (10**8))
                 except:
                     return Response(status=401)
             user_wallet.send_to(
