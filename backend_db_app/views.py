@@ -5,7 +5,7 @@ from .models import CustomUser
 from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth.decorators import login_required
 
-BASE_URL='https://btsea.org/'
+BASE_URL='https://www.btsea.org/'
 
 # Non-auth view
 def index(request, token=None, uid=None):
