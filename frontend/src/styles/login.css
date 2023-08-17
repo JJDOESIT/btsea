@@ -18,6 +18,7 @@
     width: fit-content;
     padding: 15px;
     border-radius: 15%;
+    box-shadow: 0px 0px 20px cadetblue;
 }
 
 .login-input-container:not(:last-child) > input{
