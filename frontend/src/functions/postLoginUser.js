@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default async function postLoginUser(data) {
-  const TEST_URL = "http://127.0.0.1:8000/framework/login-user/";
-  const PRODUCTION_URL = "http://jamesgwhit.pythonanywhere.com/framework/login-user/";
+  const PRODUCTION_URL =
+    process.env.REACT_APP_BASE_URL + "framework/login-user/";
   return await axios
     .post(PRODUCTION_URL, data)
     .then((response) => {

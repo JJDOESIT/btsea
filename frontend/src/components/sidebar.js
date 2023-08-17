@@ -5,7 +5,6 @@ import HandleUserLogout from "../functions/handleLogout";
 export default function Sidebar() {
   const [menuToggle, setMenuToggle] = useState(true);
   const selectedLink = useRef("home");
-  const BASE_URL = "http://jamesgwhit.pythonanywhere.com/";
   const sidebarLinkArray = ["home", "send", "receive"];
 
   return (
@@ -45,7 +44,7 @@ export default function Sidebar() {
               Home
             </a>
             <a
-              href={BASE_URL + "dashboard/send/"}
+              href={process.env.REACT_APP_BASE_URL + "dashboard/send/"}
               className={
                 window.location.href.includes("send")
                   ? "menu-item is-active"
@@ -58,7 +57,7 @@ export default function Sidebar() {
               Send
             </a>
             <a
-              href={BASE_URL + "dashboard/receive/"}
+              href={process.env.REACT_APP_BASE_URL + "dashboard/receive/"}
               className={
                 window.location.href.includes("receive")
                   ? "menu-item is-active"

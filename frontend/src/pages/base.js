@@ -12,13 +12,11 @@ export default function Base() {
   //Get request to fetch trending crypto data
   useEffect(() => {
     document.querySelector("#root").style.overflow = "auto";
-    axios
-      .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
-      .then((response) => {
-        setPaginatedData(_.take(response.data, 20));
-        setCryptoData(response.data);
-        setLoaded(true);
-      });
+    axios.get(process.env.REACT_APP_COINGECKO_CRYPTO_URL).then((response) => {
+      setPaginatedData(_.take(response.data, 20));
+      setCryptoData(response.data);
+      setLoaded(true);
+    });
   }, []);
 
   //Chrome Only (fixes card style)

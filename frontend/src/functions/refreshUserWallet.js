@@ -1,9 +1,8 @@
 import axios from "axios";
 
 export default function refreshUserWallet() {
-  const TEST_URL = "http://127.0.0.1:8000/framework/refresh-user-wallet/";
   const PRODUCTION_URL =
-    "http://jamesgwhit.pythonanywhere.com/framework/refresh-user-wallet/";
+    process.env.REACT_APP_BASE_URL + "framework/refresh-user-wallet/";
   return axios
     .post(PRODUCTION_URL)
     .then((response) => {
