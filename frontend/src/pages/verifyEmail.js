@@ -36,7 +36,7 @@ export default function VerifyEmail() {
         });
       }
     }, 100);
-  }, []);
+  }, [loaded]);
   useEffect(() => {
     var email = sessionStorage.getItem("email");
     email = decode(email);
