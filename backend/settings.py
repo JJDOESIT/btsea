@@ -34,7 +34,7 @@ AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.AllowAllUsersModelBacke
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-PASSWORD_RESET_TIMEOUT=7200
+PASSWORD_RESET_TIMEOUT = 7200
 
 # Application definition
 
