@@ -15,7 +15,8 @@ import os
 
 epoch_time = int(time.time())
 
-#Given a user object, create a token and uid (user id) and encode them into an email
+
+# Given a user object, create a token and uid (user id) and encode them into an email
 def verify_email(user):
     token = default_token_generator.make_token(user)
     uid = urlsafe_base64_encode(force_bytes(user.pk))
@@ -25,13 +26,14 @@ def verify_email(user):
         "Verify Account", message, "securebtc@gmail.com", recipient_list=[user.email]
     )
 
-#Send a new email, making sure there is 60 seconds between each request
+
+# Send a new email, making sure there is 60 seconds between each request
 class send_new_email(APIView):
     def post(self, request):
         user = CustomUser.objects.get(email=request.data["email"])
         global epoch_time
-        if (int(time.time())-(epoch_time)>=60):
-            epoch_time=int(time.time())
+        if int(time.time()) - (epoch_time) >= 60:
+            epoch_time = int(time.time())
             try:
                 verify_email(user)
             except:
@@ -40,7 +42,8 @@ class send_new_email(APIView):
         else:
             return Response(status=400)
 
-#Create a new custom user object
+
+# Create a new custom user object
 class create_model_user(APIView):
     def post(self, request):
         data = request.data
@@ -57,7 +60,8 @@ class create_model_user(APIView):
         else:
             return Response(status=400)
 
-#Log user in if their credentials are correct and if their account is active
+
+# Log user in if their credentials are correct and if their account is active
 class login_model_user(APIView):
     def post(self, request):
         data = request.data
@@ -80,7 +84,8 @@ class login_model_user(APIView):
                 return Response(status=401)
         return Response(status=404)
 
-#Log user out
+
+# Log user out
 class user_logout(APIView):
     def post(self, request):
         try:
@@ -89,7 +94,8 @@ class user_logout(APIView):
         except:
             return Response(status=400)
 
-#Using Bitcoinlib library, fetch a user wallet stored in the cache
+
+# Using Bitcoinlib library, fetch a user wallet stored in the cache
 class fetch_user_wallet(APIView):
     def post(self, request):
         try:
@@ -118,7 +124,8 @@ class fetch_user_wallet(APIView):
             }
         )
 
-#Scan wallet for new transactions
+
+# Scan wallet for new transactions
 class refresh_user_wallet(APIView):
     def post(self, request):
         try:
@@ -151,7 +158,8 @@ class refresh_user_wallet(APIView):
             }
         )
 
-#Create a new wallet if no wallet exists under their account name
+
+# Create a new wallet if no wallet exists under their account name
 class create_user_wallet(APIView):
     def post(self, request):
         try:
@@ -160,7 +168,8 @@ class create_user_wallet(APIView):
             return Response(status=404)
         return Response(data={"message": "success", "status": 200})
 
-#Generate a new child key from the master key 
+
+# Generate a new child key from the master key
 class receive_transaction(APIView):
     def post(self, request):
         try:
@@ -171,7 +180,8 @@ class receive_transaction(APIView):
         new_address = new_key.address
         return Response({"new_key": new_address})
 
-#Authenticate that the user has activated their account
+
+# Authenticate that the user has activated their account
 class check_user_active(APIView):
     def post(self, request):
         try:
@@ -184,7 +194,8 @@ class check_user_active(APIView):
         else:
             return Response(status=400)
 
-#Given an address and value, attempt to process a transaction
+
+# Given an address and value, attempt to process a transaction
 class send_transaction(APIView):
     def post(self, request):
         try:
