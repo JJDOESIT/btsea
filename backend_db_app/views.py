@@ -5,9 +5,7 @@ from .models import CustomUser
 from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth.decorators import login_required
 
-BASE_URL='http://jamesgwhit.pythonanywhere.com/'
-#BASE_URL = "http://127.0.0.1:8000/"
-
+BASE_URL='https://jamesgwhit.pythonanywhere.com/'
 
 # Non-auth view
 def index(request, token=None, uid=None):
@@ -45,4 +43,4 @@ def auth_user(request):
 
 # Handles 404 error
 def handle404(request, exception=None):
-    raise Exception()
+    return HttpResponseRedirect(BASE_URL+'not-found/')

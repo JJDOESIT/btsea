@@ -21,4 +21,4 @@ urlpatterns = [
     path('',include('backend_db_app.urls')),
 ]
 
-handler500='backend_db_app.views.handle404'
+handler404='backend_db_app.views.handle404'
