@@ -21,22 +21,20 @@ export default function VerifyEmail() {
 
   useEffect(() => {
     setTimeout(() => {
-      if (loaded) {
+      modifyDocumentBody(
+        "body",
+        ".navbar-container",
+        ".verify-email-container"
+      );
+      window.addEventListener("resize", () => {
         modifyDocumentBody(
           "body",
           ".navbar-container",
           ".verify-email-container"
         );
-        window.addEventListener("resize", () => {
-          modifyDocumentBody(
-            "body",
-            ".navbar-container",
-            ".verify-email-container"
-          );
-        });
-      }
+      });
     }, 100);
-  }, [loaded]);
+  }, []);
   useEffect(() => {
     var email = sessionStorage.getItem("email");
     email = decode(email);
@@ -83,13 +81,9 @@ export default function VerifyEmail() {
 
   if (loaded && activeUser) {
     return (
-      <div className="email-verified-container">
-        <div>
-          <p>Congrats!</p>
-        </div>
-        <div>
-          <p>Your email is already verified.</p>
-        </div>
+      <div className='email-verified-container'>
+        <div><p>Congrats!</p></div>
+        <div><p>Your email is already verified.</p></div>
       </div>
     );
   } else if (loaded && !activeUser) {
@@ -105,7 +99,7 @@ export default function VerifyEmail() {
             or request a new email below.
           </p>
         </div>
-        <div className="verify-alert-container">
+        <div className='verify-alert-container'>
           <Alerts
             hidden={alertData["hidden"]}
             message={alertData["message"]}
