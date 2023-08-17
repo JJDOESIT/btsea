@@ -15,7 +15,7 @@ export default function Send() {
         modifyDocumentBody("body", ".navbar-container", ".send-container");
       });
       setLoaded(true);
-    },0);
+    },200);
   }, []);
   const [outputAddress, setOutputAddress] = useState(null);
   const [amount, setAmount] = useState(null);
