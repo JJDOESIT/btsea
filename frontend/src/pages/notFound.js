@@ -2,6 +2,8 @@ import "../styles/notFound.css";
 import modifyDocumentBody from "../functions/modifyDocumentBody";
 import { useEffect } from "react";
 export default function NotFound() {
+
+  //Modify .error-pg height on re-size
   useEffect(() => {
     setTimeout(() => {
       modifyDocumentBody("body", ".navbar-container", ".error-pg");
@@ -10,6 +12,7 @@ export default function NotFound() {
       });
     }, 50);
   }, []);
+  
   return (
     <div class="error-pg">
       <div class="error-number">

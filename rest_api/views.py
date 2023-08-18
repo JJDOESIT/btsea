@@ -188,7 +188,7 @@ class check_user_active(APIView):
             data = request.data
             user = CustomUser.objects.get(email=data["email"])
         except:
-            return Response(status=404)
+            return Response(data={"status": 200})
         if user.is_active:
             return Response(data={"status": 200})
         else:

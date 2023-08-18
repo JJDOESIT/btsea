@@ -8,6 +8,8 @@ import modifyDocumentBody from "../functions/modifyDocumentBody.js";
 import Send from "./send.js";
 
 export default function Dashboard() {
+
+  //Modify .dashboard-container on re-size
   useEffect(() => {
     setTimeout(() => {
       modifyDocumentBody("body", ".navbar-container", ".dashboard-container");

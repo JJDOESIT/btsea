@@ -12,6 +12,7 @@ export default function Home() {
   const [wallet, setWallet] = useState(null);
   const [walletCreated, setWalletCreated] = useState(false);
 
+  //Post request fetch user name, balance, and transactions
   useEffect(() => {
     const timeout = setTimeout(() => {
       fetchUserWallet().then((response) => {
@@ -22,7 +23,6 @@ export default function Home() {
           setLoading(false);
           clearTimeout(timeout);
         } else if (response.status == 404) {
-          console.log("Wallet not found");
           setWalletCreated(false);
           setLoading(false);
           clearTimeout(timeout);
@@ -31,6 +31,7 @@ export default function Home() {
     }, 1000);
   }, []);
 
+  //Post request to refresh user balance, and transactions
   function handleRefresh() {
     setLoading(true);
     refreshUserWallet().then((response) => {
@@ -40,7 +41,6 @@ export default function Home() {
         setWalletCreated(true);
         setLoading(false);
       } else if (response.status == 404) {
-        console.log("Wallet not found");
         setWalletCreated(false);
         setLoading(false);
       }

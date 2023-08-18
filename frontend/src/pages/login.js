@@ -19,11 +19,10 @@ export default function Login() {
     fontColor: "",
   });
   const navigate = useNavigate();
+
+  //Chekcs url for any redirects and prompts an error message
   useEffect(() => {
-    if (
-      window.location.href.includes("?next=") ||
-      window.location.href.includes("?next=")
-    ) {
+    if (window.location.href.includes("?next=")) {
       setAlertData({
         hidden: false,
         message: "Login",
@@ -34,6 +33,7 @@ export default function Login() {
     }
   }, []);
 
+  //Modify .login-container height on re-size
   useEffect(() => {
     modifyDocumentBody("body", ".navbar-container", ".login-container");
     window.addEventListener("resize", () => {
@@ -41,12 +41,13 @@ export default function Login() {
     });
   }, []);
 
+  //Post request to login user and add email to session storage
   function handleSubmit(event) {
     event.preventDefault();
     postLoginUser({ email: email, password: password }).then((status) => {
       if (status.status == 200) {
         try {
-          sessionStorage.setItem('email',encode(email));
+          sessionStorage.setItem("email", encode(email));
         } catch {
           console.log("Warning ... Email In Use");
         }
@@ -54,7 +55,7 @@ export default function Login() {
         navigate(0);
       } else if (status.status == 400) {
         try {
-          sessionStorage.setItem('email',encode(email));
+          sessionStorage.setItem("email", encode(email));
         } catch {
           console.log("Warning ... Email In Use");
         }

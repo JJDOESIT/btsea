@@ -7,7 +7,10 @@ import modifyDocumentBody from "../functions/modifyDocumentBody";
 import LoadingSVG from "../components/loadingSVG";
 
 export default function Send() {
+
   const [loaded, setLoaded] = useState(false);
+
+  //Modify .send-container height
   useEffect(() => {
     setTimeout(() => {
       modifyDocumentBody("body", ".navbar-container", ".send-container");
@@ -17,6 +20,7 @@ export default function Send() {
       setLoaded(true);
     },200);
   }, []);
+
   const [outputAddress, setOutputAddress] = useState(null);
   const [amount, setAmount] = useState(null);
   const [alertData, setAlertData] = useState({
@@ -27,6 +31,7 @@ export default function Send() {
     message: "Invalid Input",
   });
 
+  //Post request to send transaction
   function handleSubmit() {
     sendTransaction({ outputAddress: outputAddress, amount: amount }).then(
       (response) => {

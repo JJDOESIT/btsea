@@ -5,10 +5,12 @@ import "../styles/receive.css";
 import CryptButton from "../components/encryptButton";
 
 export default function Receive() {
+
   const [address, setAddress] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [popupActive, setPopupActive] = useState(false);
 
+  //Post request to generate child key from master key
   function generateAddress() {
     postReceiveTransaction()
       .then((response) => {
@@ -21,6 +23,7 @@ export default function Receive() {
       });
   }
 
+  //Enable popup
   function showPopup() {
     setPopupActive(true);
   }

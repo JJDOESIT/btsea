@@ -19,6 +19,7 @@ export default function VerifyEmail() {
     fontColor: "",
   });
 
+  //Modify .verify-email-container height on re-size
   useEffect(() => {
     setTimeout(() => {
       modifyDocumentBody(
@@ -35,6 +36,8 @@ export default function VerifyEmail() {
       });
     }, 100);
   }, []);
+
+  //Deoce users email for email verification
   useEffect(() => {
     var email = sessionStorage.getItem("email");
     email = decode(email);
@@ -49,6 +52,7 @@ export default function VerifyEmail() {
     });
   }, []);
 
+  //Post request to determine whether users email is verified
   function handleSubmit() {
     postSendNewEmail({ email: decode(sessionStorage.getItem("email")) }).then(
       (response) => {
@@ -81,9 +85,13 @@ export default function VerifyEmail() {
 
   if (loaded && activeUser) {
     return (
-      <div className='email-verified-container'>
-        <div><p>Congrats!</p></div>
-        <div><p>Your email is already verified.</p></div>
+      <div className="email-verified-container">
+        <div>
+          <p>Congrats!</p>
+        </div>
+        <div>
+          <p>Your email is already verified.</p>
+        </div>
       </div>
     );
   } else if (loaded && !activeUser) {
@@ -99,7 +107,7 @@ export default function VerifyEmail() {
             or request a new email below.
           </p>
         </div>
-        <div className='verify-alert-container'>
+        <div className="verify-alert-container">
           <Alerts
             hidden={alertData["hidden"]}
             message={alertData["message"]}
