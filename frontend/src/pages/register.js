@@ -100,7 +100,7 @@ export default function Register() {
             <input
               type="password"
               id="password"
-              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+              pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,25}$"
               onChange={() =>
                 setPassword(document.querySelector("#password").value)
               }
